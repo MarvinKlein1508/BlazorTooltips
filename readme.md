@@ -1,6 +1,8 @@
 # BlazorTooltips
 A simple to use blazor component to implement bootstrap tooltips in both Blazor server and Blazor WebAssembly apps. Based on Bootstrap.
 
+See a live [demo](https://marvinklein1508.github.io/BlazorTooltips/) right here on github.
+
 ## What's the difference between the default bootstrap tooltips?
 The component is designed to manage the disposing of the tooltips. Once the component is not rendered anymore, it will be automatically disposed and hide the tooltip completely automatically.
 
