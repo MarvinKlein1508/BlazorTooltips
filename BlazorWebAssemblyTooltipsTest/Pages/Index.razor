@@ -1,0 +1,42 @@
+﻿@page "/"
+
+<PageTitle>Index</PageTitle>
+
+<h1>Hello, world!</h1>
+
+<Tooltip Title="Default Tooltip">
+    <button type="button" class="btn btn-primary">Default Tooltip</button>
+</Tooltip>
+
+
+<Tooltip Title="Tooltip on top" Placement="TooltipPlacement.Top">
+    <button type="button" class="btn btn-primary">Tooltip on top</button>
+</Tooltip>
+
+<Tooltip Title="Tooltip on right" Placement="TooltipPlacement.Right">
+    <button type="button" class="btn btn-primary">Tooltip on right</button>
+</Tooltip>
+
+<Tooltip Title="Tooltip on bottom" Placement="TooltipPlacement.Bottom">
+    <button type="button" class="btn btn-primary">Tooltip on bottom</button>
+</Tooltip>
+
+<Tooltip Title="Tooltip on left" Placement="TooltipPlacement.Left">
+    <button type="button" class="btn btn-primary">Tooltip on left</button>
+</Tooltip>
+
+<Tooltip Title="<strong><i>Tooltip with HTML</i></strong>" Html="true">
+    <button type="button" class="btn btn-primary">Tooltip with HTML</button>
+</Tooltip>
+
+<Tooltip Title="Tooltip with no animation" Options="options">
+    <button type="button" class="btn btn-primary">Tooltip with no animation</button>
+</Tooltip>
+
+@code {
+    private TooltipOptions options = new TooltipOptions
+        {
+            Animation = false
+        };
+}
+
