@@ -2,40 +2,107 @@
 
 <PageTitle>Index</PageTitle>
 
-<h1>Hello, world!</h1>
-
+<h3>Default tooltip</h3>
 <Tooltip Title="Default Tooltip">
-    <button type="button" class="btn btn-primary">Default Tooltip</button>
+    <button type="button" class="btn btn-secondary">Default Tooltip</button>
 </Tooltip>
 
-
+<h3>Directions</h3>
+<p>You can change the positioning with the <strong>Placement</strong> parameter</p>
 <Tooltip Title="Tooltip on top" Placement="TooltipPlacement.Top">
-    <button type="button" class="btn btn-primary">Tooltip on top</button>
+    <button type="button" class="btn btn-secondary">Tooltip on top</button>
 </Tooltip>
 
 <Tooltip Title="Tooltip on right" Placement="TooltipPlacement.Right">
-    <button type="button" class="btn btn-primary">Tooltip on right</button>
+    <button type="button" class="btn btn-secondary">Tooltip on right</button>
 </Tooltip>
 
 <Tooltip Title="Tooltip on bottom" Placement="TooltipPlacement.Bottom">
-    <button type="button" class="btn btn-primary">Tooltip on bottom</button>
+    <button type="button" class="btn btn-secondary">Tooltip on bottom</button>
 </Tooltip>
 
 <Tooltip Title="Tooltip on left" Placement="TooltipPlacement.Left">
-    <button type="button" class="btn btn-primary">Tooltip on left</button>
+    <button type="button" class="btn btn-secondary">Tooltip on left</button>
 </Tooltip>
 
+<h3>HTML in Tooltip</h3>
+<p>Each tooltip has HTML content enabled by default. If you want you can disable this behaviour by setting the <strong>Html</strong> parameter to false</p>
 <Tooltip Title="<strong><i>Tooltip with HTML</i></strong>" Html="true">
-    <button type="button" class="btn btn-primary">Tooltip with HTML</button>
+    <button type="button" class="btn btn-secondary">Tooltip with HTML</button>
 </Tooltip>
 
-<Tooltip Title="Tooltip with no animation" Options="options">
-    <button type="button" class="btn btn-primary">Tooltip with no animation</button>
+<Tooltip Title="<strong><i>Tooltip with no HTML</i></strong>" Html="false">
+    <button type="button" class="btn btn-secondary">Tooltip with no HTML</button>
 </Tooltip>
+
+<h3>Custom tooltips</h3>
+<p>This feature requires at least Bootstrap 5.2.0</p>
+<p>You can style your tooltip in your own way by providing the <strong>CustomClass</strong> parameter.</p>
+
+<Tooltip Title="Tooltip with Custom class" CustomClass="custom-tooltip">
+    <button type="button" class="btn btn-primary">Tooltip with Custom class</button>
+</Tooltip>
+
+
+@if (SelectedAnimal is null)
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <Virtualize Items="Animals" Context="animal">
+                <tr>
+                    <td>@animal.Name</td>
+                    <td>                     
+                        <Tooltip Title="Edit animal">
+                            <button type="btn btn-primary" class="btn btn-secondary" @onclick="() => SelectedAnimal = animal">
+                                Edit
+                            </button>
+                        </Tooltip>
+
+                        <Tooltip Title="Test with redirection">
+                            <a href="/counter" class="btn btn-dark">Edit</a>
+                        </Tooltip>
+                    </td>
+                </tr>
+            </Virtualize>
+        </tbody>
+    </table>
+}
+else
+{
+    <input type="text" @bind="SelectedAnimal.Name" class="form-control" />
+    <Button Color="ButtonColor.Danger" @onclick="() => SelectedAnimal = null">Cancel</Button>
+} 
 
 @code {
-        private TooltipOptions options = new TooltipOptions
+   
+
+
+    public Animal? SelectedAnimal { get; set; }
+    public List<Animal> Animals { get; set; } = new()
         {
-            Animation = false
+            new Animal
+            {
+                Name = "Dog"
+            },
+            new Animal
+            {
+                Name = "Cat"
+            },
+            new Animal
+            {
+                Name = "Horse"
+            }
         };
+
+
+    public class Animal
+    {
+        public required string Name { get; set; }
+    }
 }
