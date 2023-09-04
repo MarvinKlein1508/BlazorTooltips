@@ -1,0 +1,66 @@
+﻿@page "/dispose"
+<h3>Dispose testing</h3>
+<p>This page is to test tooltip disposing in certain scenarios.</p>
+
+@if (SelectedAnimal is null)
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <Virtualize Items="Animals" Context="animal">
+                <tr>
+                    <td>@animal.Name</td>
+                    <td>
+                        <Tooltip Title="Edit animal">
+                            <button type="btn btn-primary" class="btn btn-secondary" @onclick="() => SelectedAnimal = animal">
+                                Edit
+                            </button>
+                        </Tooltip>
+
+                        <Tooltip Title="Test with redirection">
+                            <a href="/" class="btn btn-dark">Edit</a>
+                        </Tooltip>
+                    </td>
+                </tr>
+            </Virtualize>
+        </tbody>
+    </table>
+}
+else
+{
+    <input type="text" @bind="SelectedAnimal.Name" class="form-control" />
+    <button type="button" class="btn btn-danger" @onclick="() => SelectedAnimal = null">Cancel</button>
+}
+
+@code {
+
+
+
+    public Animal? SelectedAnimal { get; set; }
+    public List<Animal> Animals { get; set; } = new()
+        {
+            new Animal
+            {
+                Name = "Dog"
+            },
+            new Animal
+            {
+                Name = "Cat"
+            },
+            new Animal
+            {
+                Name = "Horse"
+            }
+        };
+
+
+    public class Animal
+    {
+        public required string Name { get; set; }
+    }
+}
