@@ -41,25 +41,3 @@ export function update(id, options) {
         console.error(e);
     }
 }
-
-function clearTimer(id) {
-    if (window.bootstrap_tooltip_timers) {
-        if (window.bootstrap_tooltip_timers[id]) {
-            clearInterval(window.bootstrap_tooltip_timers[id]);
-            delete window.bootstrap_tooltip_timers[id];
-        }
-    }
-}
-
-function setupTimer(id) {
-    clearTimer(id);
-    if (window.bootstrap_tooltip_timers) {
-        window.bootstrap_tooltip_timers[id] = setInterval((id) => {
-
-            var identifier = "bootstrap-tooltip-" + id;
-            if (!$('#' + identifier).is(":visible")) {
-                destroy(id);
-            }
-        }, 100, id);
-    }
-}
