@@ -5,7 +5,7 @@ VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorTooltips", "BlazorTooltips\BlazorTooltips.csproj", "{52563D97-7CF4-4374-9B91-59F368D36C8C}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{FECFF557-2B49-4885-9F0E-C34CB3822F1A}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Demos", "Demos", "{FECFF557-2B49-4885-9F0E-C34CB3822F1A}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorServerTooltipsTest", "BlazorServerTooltipsTest\BlazorServerTooltipsTest.csproj", "{549DB8E0-7C67-480C-ABC5-AC82B11EB0E9}"
 EndProject

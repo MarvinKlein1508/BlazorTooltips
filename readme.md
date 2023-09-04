@@ -49,28 +49,21 @@ You can wrap the tooltip component around any HTML or blazor component. For exam
 </Tooltip>
 ```
 
-The component also provides native support for HTML tooltips.
+By default all tooltips will be shown on hover with a fade animation and placed on top. You can change this behaviour if you want like this:
+```csharp
+<Tooltip Title="Advanced tooltip" 
+         Placement="TooltipPlacement.Bottom" 
+         Animation="false">
+    <button type="button" class="btn btn-primary">Advanced tooltip</button>
+</Tooltip>
+```
+
+The component also provides native support for HTML tooltips. If you don't want to show HTML within your tooltips you can disable this feature by setting `Html` to `false`
 
 ```csharp
-<Tooltip Title="<strong><i>Tooltip with HTML</i></strong>" Html="true">
+<Tooltip Title="<strong><i>Tooltip with HTML</i></strong>" Html="false">
     <button type="button" class="btn btn-primary">Tooltip with HTML</button>
 </Tooltip>
 ```
 
-You can override almost any option of the component by passing down a custom `TooltipOptions` instance. 
-
-For example, you can very easily disable the tooltip animations.
-```csharp
-<Tooltip Title="Tooltip with no animation" Options="options">
-    <button type="button" class="btn btn-primary">Tooltip with no animation</button>
-</Tooltip>
-
-@code {
-        private TooltipOptions options = new TooltipOptions
-        {
-            Animation = false
-        };
-}
-```
-
-
+You can override almost any available option from this component by passing it down to the corresponding parameter. 
