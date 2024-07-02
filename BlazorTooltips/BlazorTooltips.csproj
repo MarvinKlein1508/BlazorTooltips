@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
 
 	<PropertyGroup>
-		<TargetFramework>net7.0</TargetFramework>
+		<TargetFramework>net8.0</TargetFramework>
 		<Nullable>enable</Nullable>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Title>BlazorTooltips</Title>
@@ -11,7 +11,7 @@
 		<RepositoryUrl>https://github.com/MarvinKlein1508/BlazorTooltips</RepositoryUrl>
 		<RepositoryType>git</RepositoryType>
 		<PackageTags>tooltips, bootstrap, blazor</PackageTags>
-		<Version>7.1.0</Version>
+		<Version>8.0.6</Version>
 		<PackageLicenseFile>license</PackageLicenseFile>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 	</PropertyGroup>
@@ -33,7 +33,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="7.0.10" />
+		<PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="8.0.6" />
 	</ItemGroup>
 
 </Project>
