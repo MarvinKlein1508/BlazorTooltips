@@ -78,7 +78,7 @@ namespace BlazorTooltips
             if (firstRender)
             {
                 _rendered = true;
-                _jsModule = await jsRuntime.InvokeAsync<IJSObjectReference>("import", "./_content/BlazorTooltips/bootstrap.tooltip.js");
+                _jsModule = await jsRuntime.InvokeAsync<IJSObjectReference>("import", "./_content/Omniacore.BlazorTooltips/bootstrap.tooltip.js");
                 await Setup();
             }
         }
@@ -92,7 +92,9 @@ namespace BlazorTooltips
 
         public async ValueTask DisposeAsync()
         {
-            await Destroy();
+            try { await Destroy(); }
+            catch (JSDisconnectedException) { }
+            catch (ObjectDisposedException) { }
         }
 
         private async Task Setup()

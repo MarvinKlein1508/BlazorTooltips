@@ -5,13 +5,15 @@
 		<Nullable>enable</Nullable>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Title>BlazorTooltips</Title>
-		<Company>Marvin Klein</Company>
-		<Description>A simple to use component to implement bootstrap tooltips into blazor server and websassembly apps.</Description>
+		<Company>Omniacore Solutions</Company>
+		<Authors>Andrea Lavezzi</Authors>
+		<Description>A fork of MarvinKlein1508/BlazorTooltips</Description>
 		<PackageReadmeFile>readme.md</PackageReadmeFile>
-		<RepositoryUrl>https://github.com/MarvinKlein1508/BlazorTooltips</RepositoryUrl>
+		<RepositoryUrl>https://github.com/OMNIACORE/BlazorTooltips</RepositoryUrl>
 		<RepositoryType>git</RepositoryType>
 		<PackageTags>tooltips, bootstrap, blazor</PackageTags>
-		<Version>9.0.6</Version>
+		<PackageId>Omniacore.BlazorTooltips</PackageId>
+		<Version>9.0.9</Version>
 		<PackageLicenseFile>license</PackageLicenseFile>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 	</PropertyGroup>
